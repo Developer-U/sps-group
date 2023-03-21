@@ -1,0 +1,421 @@
+/*header*/
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  & * {
+    color: $white;
+  }
+
+  &__left {
+    width: 185px;
+    padding: 0;
+  }
+
+  &__tel {
+    width: 100%;
+    height: 48px;
+
+@include whiteBtn();
+  }
+
+  &__logo {
+    width: 157px;
+  }
+
+  &__icons {
+    width: 185px;
+  }
+
+  &__top , &__menu {
+    padding-top: 24px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid rgba(255,255,255,.4);
+
+@include relative();
+  }
+
+  &__menu {
+    margin: 0 -12px;
+    padding: 0;
+  }
+}
+
+.header-menu {
+  &__item {
+    padding: 20px 20px 18px 20px;
+    transition: background-color .3s ease-in-out;
+
+    &:hover , &:focus , &:active {
+      background-color: $purple;
+      transition: background-color .3s ease-in-out;
+    }
+  }
+}
+
+.icons-top {
+  @include relative();
+
+  &__link {
+    display: block;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    transition: fill .25s ease-in-out;
+
+    fill: $white;
+
+@include relative();
+
+    &:hover , &:focus , &:active {
+      transition: fill .25s ease-in-out;
+
+      fill: $greyDark;
+    }
+  }
+}
+
+.cart-contents-count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  right: 3px;
+  width: 17px;
+  height: 17px;
+  font-size: 12px;
+  color: $white;
+  background-color: $purple;
+  border-radius: 17px;
+}
+
+.header-menu {
+  max-width: 100%;
+
+  &__item a {
+    font-size: 16px;
+    line-height: 100%;
+    text-transform: uppercase;
+    letter-spacing: .02em;
+  }
+}
+
+/*header end*/
+
+
+/*hero*/
+.hero {
+  overflow: hidden;
+  min-height: 87.5vh;
+  padding-top: 306px;
+  padding-bottom: 240px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  & * {
+    color: $white;
+  }
+  &__descr {
+    width: 47%;
+  }
+}
+/*hero end*/
+
+/*advantages*/
+.adv-list {
+  display: grid;
+  width: 92%;
+  margin: $centered;
+
+  column-gap: 130px;
+  grid-template-columns: repeat(3, 1fr);
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 13px;
+
+    & * {
+      text-align: center;
+    }
+  }
+
+  &__image {
+    overflow: hidden;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 22px;
+  }
+
+  &__heading , &__heading span {
+    font-size: 18px;
+    font-family: $montserratBold;
+    line-height: 140%;
+  }
+  &__heading span {
+    display: block;
+    font-family: $montserratRegular;
+  }
+}
+/*advantages end*/
+
+
+/*shop-block*/
+
+.shop-block {
+  &__heading {
+    margin-bottom: 54px;
+  }
+}
+
+.cat-list {
+  display: grid;
+  margin: 0 -10px 30px -10px;
+
+  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 450px;
+  padding: 8px;
+  border-radius: 3px;
+  outline: 1px solid transparent;
+  transition: outline-color .3s linear;
+
+@include relative();
+
+  &__image {
+    overflow: hidden;
+    width: 100%;
+    height: 380px;
+    margin-bottom: 20px;
+
+    & img {
+      height: 100%;
+      transition: transform .5s linear;
+
+      object-fit: cover;
+    }
+  }
+
+  &:hover {
+    outline-color: $purple;
+    transition: outline-color .3s linear;
+  }
+
+  &:hover .product__image img {
+    transform: scale(1.1);
+    transition: transform .5s linear;
+  }
+
+
+  &__link {
+    padding-top: 11px;
+    border-top: 1px solid rgba(0,0,0, .4);
+    font-size: 18px;
+    font-weight: 600;
+    font-family: $montserratMedium;
+    line-height: 140%;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+/*shop-block end*/
+
+/*products*/
+.popular {
+  padding-bottom: 180px;
+}
+
+.product-list {
+  gap: 35px;
+}
+
+.product-item {
+  padding: 20px 16px;
+  background-color: $greyLight;
+
+  &__image {
+    overflow: hidden;
+    width: 100%;
+    height: 286px;
+    margin-bottom: 10px;
+  }
+  &__info {
+    margin: 0;
+
+    gap: 1px;
+  }
+  &__left_descr {
+    font-size: 12px;
+    line-height: 130%;
+  }
+  &__right {
+    text-align: right;
+    &_val {
+      font-size: 12px;
+      line-height: 130%;
+      opacity: .5;
+    }
+  }
+
+  & h3 {
+    font-size: 18px;
+    line-height: 140%;
+  }
+  &__buttons {
+    display: grid;
+    margin-top: 12px;
+    padding: 18px 0 0;
+    border-top: 1px solid rgba(0,0,0,.3);
+
+    gap: 10px;
+    grid-template-columns: 1fr 65px;
+  }
+  &__buttons button , &__buttons a {
+    display: block;
+    height: 48px;
+
+@include blackBtn();
+  }
+  &__box {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__box a {
+    display: block;
+  }
+  &__buy svg {
+    width: 24px;
+    height: 24px;
+    transition: fill .2s ease-in-out;
+
+    fill: $greyDark;
+
+    &:hover , &:focus , &:active {
+      transition: fill .2s ease-in-out;
+
+      fill: $white;
+    }
+  }
+}
+.favorite-add {
+  position: absolute;
+  z-index: 6;
+  top: 24px;
+  right: 8px;
+  width: 24px;
+  height: 24px;
+
+  & svg {
+    width: 100%;
+    height: 100%;
+
+    fill: $greyDark;
+  }
+}
+
+.price-first {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 140%;
+}
+
+.progress-bar {
+  height: 2px;
+  background-color: $greyLight;
+  border-radius: 2px;
+
+  &__progress {
+    width: 16%;
+    height: 2px;
+    background-color: $greyDark;
+    border-radius: 2px;
+  }
+}
+/*products end*/
+
+/*footer*/
+
+.footer {
+  padding-top: 106px;
+  padding-bottom: 20px;
+  background-color: $greyDark;
+
+  & * {
+    color: $white;
+  }
+
+  &__items {
+    display: grid;
+
+    gap: 3%;
+    grid-template-columns: 29% 21% 20% 1fr;
+  }
+  &__logo {
+    display: block;
+    width: 157px;
+  }
+  &__fourth p {
+    font-size: 16px;
+    font-family: $montserratBold;
+    line-height: 140%;
+  }
+}
+
+.footer-box {
+  &__heading {
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 100%;
+    text-transform: uppercase;
+    opacity: .5;
+  }
+}
+
+.footer-list {
+  &__item {
+    margin-bottom: 8px;
+
+    & a , & p {
+      font-size: 16px;
+      line-height: 140%;
+    }
+  }
+}
+.footer-box {
+  margin-bottom: 70px;
+}
+
+.copyright {
+  font-size: 12px;
+  line-height: 130%;
+  opacity: .3;
+}
+
+/*footer end*/

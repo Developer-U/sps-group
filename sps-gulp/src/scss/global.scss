@@ -1,0 +1,330 @@
+/*global project styles*/
+
+@import "_variables.scss";
+@import "_mixin.scss";
+
+html {
+          box-sizing: border-box;
+
+  -webkit-box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  min-width: 320px;
+  margin: 0;
+  font-size: 18px;
+  font-family: $montserratRegular;
+  line-height: 140%;
+  color: $greyDark;
+  background-color: $white;
+}
+
+.closed {
+  overflow-y: hidden;
+  height: 100vh;
+  // padding-right: 40px;
+}
+
+* , *::after , *::before {
+          box-sizing: inherit;
+
+  -webkit-box-sizing: inherit;
+}
+
+button {
+  padding: 0;
+  border: none;
+  font-family: inherit;
+  background-color: initial;
+  outline: none;
+  cursor: pointer;
+}
+
+input , textarea {
+  border: none;
+}
+
+p , h1 , h2 , h3 , h4 , figure {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+address {
+  font-style: normal;
+}
+
+h1 , h2 {
+  font-family: $calypso;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  color: $greyDark;
+}
+
+h1 {
+  margin-bottom: 36px;
+  font-size: 78px;
+  line-height: 120%;
+}
+
+h2 {
+  margin-bottom: 73px;
+  font-size: 48px;
+  line-height: 140%;
+}
+
+p {
+  font-size: 18px;
+  font-family: $montserratRegular;
+  line-height: 140%;
+  color: $greyDark;
+}
+
+a {
+  text-decoration: none;
+  color: initial;
+  transition: color .2s ease-in-out;
+
+  &:hover , &:focus , &:active {
+    color: inherit;
+    transition: color .2s ease-in-out;
+  }
+}
+
+img {
+  width: 100%;
+  max-height: 100%;
+
+  object-fit: contain;
+}
+
+/*containers and sections*/
+
+.container-fluid {
+  max-width: 100%;
+  margin: $centered;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: $centered;
+}
+
+.section {
+  padding-top: 180px;
+  padding-bottom: 140px;
+}
+.section.dark {
+  padding-bottom: 180px;
+  background-color: $greyDark;
+
+  & * {
+    color: $white;
+  }
+}
+
+
+/*Forms*/
+
+.input-form {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 64px;
+  margin-bottom: 4px;
+  padding: 20px 24px;
+  font-size: 16px;
+  font-family: $montserratRegular;
+  line-height: 24px;
+  color: #abb5be;
+  background-color: #fff;
+  outline: 2px solid #eaeaea;
+  transition: outline-color .2s ease-in-out;
+
+  -webkit-appearance: none;
+          appearance: none;
+
+  &:hover , &:focus , &:active {
+    outline-color: $greyLight;
+    transition: outline-color .2s ease-in-out;
+  }
+}
+
+textarea {
+  min-width: 100%;
+  max-width: 100%;
+  height: 128px;
+  color: #abb5be;
+}
+
+.form-btn {
+  width: 100%;
+  min-height: 64px;
+
+@include blackBtn();
+}
+
+.visually-hidden {
+  overflow: hidden;
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+
+/*popups*/
+
+.popup {
+  display: none;
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-top: 14vh;
+  background: rgba(35, 35, 35, .4);
+
+  &.getit-popup {
+    position: fixed;
+    padding: 0;
+  }
+
+  &__cont {
+    width: 62.5%;
+    max-width: 1184px;
+    margin: 0 auto;
+    padding: 64px 40px;
+    background-color: #fff;
+    box-shadow: 0px 0px 40px rgba(35, 35, 35, .05);
+
+@include relative();
+
+    &.getit__cont {
+      width: 400px;
+      height: 100%;
+      margin: 0 0 0 auto;
+      padding-top: 160px;
+      background-color: rgba(255,255,255,.92);
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    width: 40px;
+    height: 40px;
+
+// background: url("../images/close_disable.svg") no-repeat center/100%;
+    transition: background-image .3s ease-in-out;
+
+    &:hover , &:focus {
+      // background-image: url("../images/close_hover.svg");
+      transition: background-image .3s ease-in-out;
+    }
+
+    &:active {
+      // background-image: url("../images/close_active.svg");
+      transition: background-image .3s ease-in-out;
+    }
+  }
+
+  &__heading {
+    margin-bottom: 63px;
+    font-size: 32px;
+    line-height: 38px;
+  }
+}
+
+/*popups end*/
+
+
+/* button to top */
+.to-top {
+  display: block;
+  position: fixed;
+  z-index: 999;
+  right: 60px;
+  bottom: 80px;
+  width: 60px;
+  height: 60px;
+  opacity: .6;
+
+// background-image: url("../images/accordion_arrow_up.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+/*search field*/
+
+.for-form {
+  position: absolute;
+  z-index: 2;
+  right: 154px;
+  width: 350px;
+  transform: translateX(302%);
+
+  &__form {
+    position: relative;
+    width: 100%;
+    padding-right: 16px;
+    border: 1px solid white;
+    background: transparent;
+    border-radius: 2px;
+
+// transform: translateX(-302%);
+
+    @include relative();
+  }
+
+  &__input {
+    width: calc(100% - 70px);
+    height: 34px;
+    padding: 4px 20px;
+    background-color: rgba(255,255,255,.2);
+  }
+
+  &__close {
+    width: 22px;
+    padding: 0;
+  }
+}
+
+.search-to-button , .search-button__find {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+}
+
+.search-button__find {
+  fill: $greyDark;
+}
+
+.search-button__find {
+  transition: fill .2s ease-in-out;
+
+  fill: #000;
+
+  &:hover , &:focus , &:active {
+    transition: fill .2s ease-in-out;
+
+    fill: $greyDark;
+  }
+}
+
+/*search field end*/
+

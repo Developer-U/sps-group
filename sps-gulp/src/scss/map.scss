@@ -1,0 +1,53 @@
+.ymaps-2-1-79-balloon {
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+#map .ymaps-2-1-79-balloon__content {
+  width: 303px;
+  margin: 0;
+  padding: 0;
+}
+
+#map .ymaps-2-1-79-balloon-content__header {
+  padding: 20px;
+}
+
+#map .ymaps-2-1-79-balloon__content ymaps {
+  width: 70% !important;
+  height: fit-content !important;
+  margin: 0 !important;
+}
+
+#map .ymaps-2-1-79-balloon__close-button {
+  opacity: 1;
+}
+
+.baloon__header {
+  padding: 24px 37px 24px 24px;
+  background-color: $purple;
+}
+
+.baloon__box {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 32px 24px 12px;
+}
+
+.baloon__main {
+  font-size: 24px;
+  line-height: 29px;
+}
+
+.baloon__heading {
+  margin-bottom: .6rem;
+  font-size: 14px;
+  line-height: 140%;
+}
+
+.baloon__text {
+  margin-bottom: 1.5rem;
+  font-size: 14px;
+  line-height: 160%;
+}
+
